@@ -1,29 +1,7 @@
-// Function for creating element inside the box 
-function elementInBox(value, parent){
-    let box = document.createElement("div");
-    box.classList.add("box");
-    box.innerHTML = value;
-    document.getElementById(parent).appendChild(box);
-}
-
-function keepLastChildOnly(parent){
-    const children = document.getElementById(parent);
-    while (children.children.length > 1){
-        children.removeChild(children.lastElementChild);
-    }
-}
-
-function IsArrSorted(arr, btnID){
-    let arrSorted = true;
-    for (i = 1; i < arr.length; i++){
-        if (arr[i] < arr[i-1]){
-            arrSorted = false;
-            break;
-        }
-    }
-
+function changeBtn(sorted, parent){
+    let btnID = parent + "Btn";
     let btn = document.getElementById(btnID);
-    if (arrSorted) {
+    if (sorted) {
         btn.classList.add("arrSortedBtn");
         btn.innerHTML = "Sorted";
     } else{
@@ -32,29 +10,32 @@ function IsArrSorted(arr, btnID){
     }
 }
 
+function arrSorted(parent, length){
+    for (i = 1; i < length; i++){
+        let previousElement = document.getElementById(parent + "Box" + (i))
+        let currentElement = document.getElementById(parent + "Box" + (i+1))
+        if (currentElement.innerHTML < previousElement.innerHTML){
+            return false;
+        }
+    }
+    return true;
+}
+
 function bogoSort(){
     let parent = "bogo";
     let arr = numbers.slice();
-    let newArr = [];
-    keepLastChildOnly(parent);
+    let arrLength = arr.length;
 
     // Reorder the elements
-    while(arr.length != 0){
+    for (i = 0; i < arrLength; i++){
         let randomIndex = Math.floor(Math.random() * arr.length);
         let value = arr.splice(randomIndex, 1);
-        newArr.push(value);
-        elementInBox(value, parent);
+        let currentElement = document.getElementById(parent + "Box" + (i+1));
+        currentElement.innerHTML = value;
     }
-    IsArrSorted(newArr, "bogoBtn");
-    
+
+    let sorted = arrSorted(parent, arrLength);
+    changeBtn(sorted, parent);
 }
 
 numbers = [1, 2, 3, 4];
-
-
-// Initial order
-//for (i = 1; i < numbers.length; i++){
-   // elementInBox(numbers[i], "bogo");
-//}
-//elementInBox(numbers[0], "bogo");
-

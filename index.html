@@ -16,24 +16,54 @@
       <div id = "bogo">
         <button onclick="bogoSort()" id = "bogoBtn" class = "sortBtn"> Press to sort </button>
         <div class="box" id="bogoBox1">2</div>
-        <div class="box" id="bogoBox2" >1</div>
-        <div class="box" id="bogoBox3" >3</div>
-        <div class="box" id="bogoBox4" >4</div>
+        <div class="box" id="bogoBox2">1</div>
+        <div class="box" id="bogoBox3">3</div>
+        <div class="box" id="bogoBox4">4</div>
 
       </div> 
   </section>
   <section class = 'center'>
     <h3>Sleep sort</h3>
-    <p>For each element in the array, <span class="highlighted"> the algorithm sleeps. The sleep duration is equal to the value of the element</span>, so for value 1 it sleeps for 1 time unit (such as ms or s).</p>
-    <p>If the values are small, it can be really fast sorting method but <span class="highlighted">if the array contains large values, this algorithm is unusable.</span></p>
+    <p>This algorithm <span class="highlighted"> uses a sleep function. The sleep duration is equal to the value of the element</span>, so for a value of one, it sleeps for one time unit (such as one ms or s).</p>
+    <p>If the values are small, it can be really fast sorting method but it becomes <span class="highlighted">impractical when the array contains large values.</span></p>
     <div>
-      <button onclick="sleepsort()" id = "sleepBtn" class = "sortBtn"> Press to sort </button>
+      <button onclick="sleepSort()" id = "sleepBtn" class = "sortBtn"> Press to sort </button>
       <div class="box" id="sleepBox1">5</div>
-      <div class="box" id="sleepBox2" >7</div>
-      <div class="box" id="sleepBox3" >3</div>
-      <div class="box" id="sleepBox4" >1</div>
+      <div class="box" id="sleepBox2">7</div>
+      <div class="box" id="sleepBox3">3</div>
+      <div class="box" id="sleepBox4">1</div>
     </div>
   </section>
+
+  <section class = 'center'>
+    <h3>Miracle sort</h3>
+    <p>This algorithm is known <span class="highlighted">to be extremely reliably unreliable.</span></p>
+    <p>The Miracle sort does not actually do any sorting iself and <span class="highlighted">hopes for a miracle to sort the array</span>, hence the name.</p>
+    <div>
+      <button class = "sortBtn"> Hope harder</button>
+      <div class="box">5</div>
+      <div class="box">7</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+  </section>
+
+  <!-- <section class = 'center'>
+    <h3>Stalin sort</h3>
+    <p>This algorithm is<span class="highlighted"> extremly fast, it only needs to iterate through the array once. </span></p>
+    <p>It even <span class="highlighted">always returns a sorted array</span>, the only negative aspect is, that there is a <span class="highlighted">loss of data.</span></p>
+    <p>This sorting algorithm <span class="highlighted">removes the elements that are not in order</span> (makes a new array of elements that are in order).</p>
+    <div>
+      <button onclick="" id = "stalinBtn" class = "sortBtn"> Press to sort </button>
+      <div class="box" id="stalinBox1">5</div>
+      <div class="box" id="stalinBox2">7</div>
+      <div class="box" id="stalinBox3">1</div>
+      <div class="box" id="stalinBox4">3</div>
+      <div class="box" id="stalinBox5">10</div>
+      <div class="box" id="stalinBox6">2</div>
+    </div>
+  </section> -->
+
   <script src="res/script.js"></script>
-</body>
+  </body>
 </html>

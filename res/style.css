@@ -68,7 +68,10 @@ p ~ p {
     background-color: rgb(150, 197, 199);
 }
 
-#bogo{
-    display: flex;
+@media (max-width: 600px){
+    .sortBtn{
+            margin-bottom: 5px;
+            display: flex; 
+            flex-direction: column;
+            }
 }
-
